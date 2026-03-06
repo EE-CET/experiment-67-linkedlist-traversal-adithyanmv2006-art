@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class  Solution{
+public class Solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -15,14 +15,16 @@ public class  Solution{
 
         System.out.print("Forward: ");
         while(it.hasNext()) {
-            System.out.print(it.next() + " ");
+            System.out.print(it.next());
+            if(it.hasNext()) System.out.print(" ");
         }
 
         System.out.println();
 
         System.out.print("Backward: ");
         while(it.hasPrevious()) {
-            System.out.print(it.previous() + " ");
+            System.out.print(it.previous());
+            if(it.hasPrevious()) System.out.print(" ");
         }
 
         sc.close();
