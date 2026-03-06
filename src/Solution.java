@@ -1,38 +1,30 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class Solution {
-    public static <T extends Comparable<T>> T findMax(T[] array) {
-        if (array == null || array.length == 0) {
-            return null;
-        }
-        
-        T max = array[0];
-        for (int i = 1; i < array.length; i++) {
-            if (array[i].compareTo(max) > 0) {
-                max = array[i];
-            }
-        }
-        return max;
-    }
-
+public class  Solution{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
-        Integer[] intArray = new Integer[n];
-        for (int i = 0; i < n; i++) {
-            intArray[i] = sc.nextInt();
+        LinkedList<Integer> list = new LinkedList<>();
+
+        for(int i = 0; i < n; i++) {
+            list.add(sc.nextInt());
         }
 
-        int m = sc.nextInt();
-        String[] stringArray = new String[m];
-        for (int i = 0; i < m; i++) {
-            stringArray[i] = sc.next();
+        ListIterator<Integer> it = list.listIterator();
+
+        System.out.print("Forward: ");
+        while(it.hasNext()) {
+            System.out.print(it.next() + " ");
         }
 
-        System.out.println("Max Integer: " + findMax(intArray));
-        System.out.println("Max String: " + findMax(stringArray));
-        
+        System.out.println();
+
+        System.out.print("Backward: ");
+        while(it.hasPrevious()) {
+            System.out.print(it.previous() + " ");
+        }
+
         sc.close();
     }
 }
